@@ -9,4 +9,4 @@ SUM=$((NUMBER1+NUMBER2))
 ADD=$((NUMBER1-NUMBER2))
 
 echo "Addition of 2 numbers is: $SUM"
-echo "Subtraction of 2 num is:
+echo "Subtraction of 2 num is: $ADD"
