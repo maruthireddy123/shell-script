@@ -15,6 +15,17 @@ then
 if [ $? -ne 0 ]
 then 
    echo "Installation of mysql is errro"
+   exit 1
 else
    echo "Installation of mysql is success"
    fi
+
+yum install postfix -y 
+
+if [ $? -ne 0 ]
+then 
+   echo "Installation of postfix is error"
+   exit 1 
+else
+   echo "installation of postfix is success"
+fi
