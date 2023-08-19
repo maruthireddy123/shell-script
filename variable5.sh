@@ -8,7 +8,7 @@ NUMBER2=$2
 SUM=$((NUMBER1+NUMBER2))
 ADD=$((NUMBER1-NUMBER2))
 MUL=$((NUMBER1*NUMBER2))
-DIV=$((NUMBER1/NUMBER2))
+DIV=$((NUMBER1%NUMBER2))
 
 echo "Addition of 2 numbers is: $SUM"
 echo "Subtraction of 2 num is: $ADD"
