@@ -11,21 +11,21 @@ N="\e[32"
 VALIDATE () {
     if [ $1 -ne 0 ]
     then 
-       echo -e "$2...$R FAILURE $N hey ins not done " 
+       echo -e "$2...$R FAILURE $N" 
        exit 1
     else 
-       echo -e "$2...$G Succsss $N hey its done now enjoy"
+       echo -e "$2...$G Succsss $N"
     fi
 }
 
-USERID=(id -u)
-if [ $USERID -ne 0 ]
-then 
-   echo "$R OOPS ERROR you must installed this under root user"
-   exit 1 
+#USERID=(id -u)
+#if [ $USERID -ne 0 ]
+#then 
+ #  echo "$R OOPS ERROR you must installed this under root user"
+  # exit 1 
 #else
 #echo "okay"
-fi
+#fi
 
 #now you have to see the whether installed or not 
 
