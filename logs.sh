@@ -7,9 +7,9 @@ LOG_FILE=/tmp/SCRIPT_NAME-$DATE.log
 
 #introdeuce the colours
 
-R="/e[31m"
-G="/e[32m"
-N="/e[0m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 #now validate the function with arugs
  
