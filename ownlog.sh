@@ -32,7 +32,7 @@ fi
 yum install git -y 
 VALIDATE $? "install the git it will be" &>>$LOG_FILE
 
-yum install myslq -y 
+yum install mysql -y 
 VALIDATE $? "installing the mysql it will be " &>>$LOG_FILE
 
 yum install postfix -y 
