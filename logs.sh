@@ -3,7 +3,7 @@
 
 DATE=$(date +%F)
 SCRIPT_NAME=$0
-LOG_FILE=/tmp/SCRIPT_NAME-$DATE.log
+LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 #introdeuce the colours
 
