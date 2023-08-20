@@ -18,11 +18,11 @@ VALIDATE () {
     fi
 }
 
-#USERID=(id -u)
-#if [ $USERID -ne 0 ]
-#then 
- #  echo "$R OOPS ERROR you must installed this under root user"
-  # exit 1 
+USERID=(id -u)
+if [ $USERID -ne 0 ]
+then 
+   echo "$R OOPS ERROR you must installed this under root user"
+   exit 1 
 #else
 #echo "okay"
 #fi
