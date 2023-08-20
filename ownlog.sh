@@ -5,8 +5,8 @@ SCRIPT_NAME=$0
 LOG_FILE=/tmp/$SCRIPT_NAME-$DATE.log
 
 R="\e[31m"
-G="\e[32"
-N="\e[32"
+G="\e[32m"
+N="\e[32m"
 
 VALIDATE () {
     if [ $1 -ne 0 ]
