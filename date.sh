@@ -17,7 +17,7 @@ then
 fi
 
 VALIDATE () {
-    if [$1 -ne 0 ];
+    if [ $1 -ne 0 ];
     then
        echo -e "INSTALLING $2....$R FAILURE"
        exit 1 
