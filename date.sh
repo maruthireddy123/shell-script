@@ -10,14 +10,14 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-if [ USERD_ID -ne 0 ]
+if [ $USERD_ID -ne 0 ];
 then 
    echo -e "$R ERROR please excute this commands in root user"
    exit 1 
 fi
 
 VALIDATE () {
-    if [$1 -ne 0 ]
+    if [$1 -ne 0 ];
     then
        echo -e "INSTALLING $2....$R FAILURE"
        exit 1 
@@ -38,4 +38,3 @@ do
      echo -e "$Y $i is alreay installed $N"
      fi 
      done
-     
