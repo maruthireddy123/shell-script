@@ -8,18 +8,18 @@ G="\e[32"
 N="\e[0m"
 Y="\e[33m"
 
-DISK_USAGE=$(df -hT | grep -vE 'tmpfs|Filesystem')
+DISK_USAGE=$(df -hT | grep -vE 'tmpfs|Filesystem') &>>$LOG_FILE
 DISK_USAGE_THRESHOLD=1
 message=""
 
 #IFS means internal field seperator is space:
  while IFS= read line 
  do 
-  usage=$(echo $line | awk '{print $6}' | cut -d % -f1)
+  usage=$(echo $line | awk '{print $6}' | cut -d % -f1) &>>$LOG_FILE
   partition=$(echo $line | awk '{print $1}')
   if [ $usage -gt $DISK_USAGE_THRESHOLD ];
   then 
-    message+="HIGH DISK USAGE on $partition: $usage\n"
+    message+="HIGH DISK USAGE on $partition: $usage\n" &>>$LOG_FILE
     fi
 done <<< $DISK_USAGE
 
