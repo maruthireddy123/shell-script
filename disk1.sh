@@ -16,5 +16,5 @@ if [ $usage -gt $DISK_USGAGE_THRESHOLD ];
 thne 
 message+= "HIGH DISK USGAE for $partition: $usage\n"
 fi 
-done
+done <<< $DISk_USAGE
 echo -e "message: $message"
