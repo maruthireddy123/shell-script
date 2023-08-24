@@ -21,6 +21,7 @@ message=""
   then 
     message+="HIGH DISK USAGE on $partition: $usage\n" &>>$LOG_FILE
     fi
-done <<< $DISK_USAGE
+    
+done <<< $DISK_USAGE &>>$LOG_FILE
 
-echo -e "message: $message"
+echo -e "message: $message" &>>$LOG_FILE 
