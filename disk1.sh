@@ -14,7 +14,7 @@ usage=$(echo $line | awk '{print $6}' | cut -d % f1)
 partition=$(echo $line | awk '{print $1}')
 if [ $usage -gt $DISK_USGAGE_THRESHOLD ];
 then
-message+="HIGH DISK USGAE for $partition: $usage\n"
+   message+="HIGH DISK USGAE for $partition: $usage\n"
 fi 
 done <<< $DISk_USAGE
 echo -e "message: $message"
