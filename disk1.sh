@@ -11,7 +11,7 @@ message=""
 while IFS read line
 do 
 usage=$(echo $line | awk '{print $6}' | cut -d % f1)
-partition=$ (echo $line | awk '{print1}')
+partition=$(echo $line | awk '{print1}')
 if [ $usage -gt $DISK_USGAGE_THRESHOLD ];
 thne 
 message+= "HIGH DISK USGAE for $partition: $usage\n"
