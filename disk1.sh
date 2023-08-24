@@ -8,7 +8,7 @@ DISK_USGAGE=$(df -hT | grep -vE 'tmpfs|Filesystem')
 DISK_USGAGE_THRESHOLD=1
 message=""
 
-while IFS read line
+while IFS= read line
 do 
 usage=$(echo $line | awk '{print $6}' | cut -d % f1)
 partition=$(echo $line | awk '{print1}')
