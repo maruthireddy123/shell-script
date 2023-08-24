@@ -15,9 +15,9 @@ message=""
 #IFS means internal field seperator is space:
  while IFS= read line 
  do 
-  usage=$(echo $line | awk '{print $6}' | cut -d % f1)
+  usage=$(echo $line | awk '{print $6}' | cut -d % -f1)
   partition=$(echo $line | awk '{print $1}')
-  if [ $USAGE -gt $DISK_USAGE_THRESHOLD ];
+  if [ $usage -gt $DISK_USAGE_THRESHOLD ];
   then 
     message+="HIGH DISK USAGE on $partition: $usage\n"
     fi
