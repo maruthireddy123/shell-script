@@ -23,4 +23,4 @@ message=""
     fi
 done <<< $DISK_USAGE 
 
-echo -e "message: $message" &>>$LOG_FILE 
+echo -e "message: $message" 
