@@ -7,9 +7,11 @@ IMAGE_ID=ami-03265a0778a880afb
 #write a for loop that we need t3.medium for mongodb mysql...
 for i in "${NAMES[@]}"
 do 
-INSTANCE_TYPE=t3.medium
+if [ [ $i == "mongodb" || "$i == "mysql" ] ]
+then
+INSTANCE_TYPE="t3.medium"
 else 
-INSTANCE_TYPE=t2.micro
+INSTANCE_TYPE="t2.micro"
 fi
 echo "creating a $i instance"
 
