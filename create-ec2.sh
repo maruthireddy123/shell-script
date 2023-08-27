@@ -1,0 +1,32 @@
+#!/bin/bash
+NAMES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
+INSTANCE_TYPE=""
+SECURITY_ID=sg-05dc3a3cddb80301f
+IMAGE_ID=ami-03265a0778a880afb
+
+#write a for loop that we need t3.medium for mongodb mysql...
+for i in "${NAMES[@]}"
+do 
+INSTANCE_TYPE=t3.medium
+else 
+INSTANCE_TYPE=t2.micro
+fi
+echo "creating a $i instance"
+
+IP_ADDRESS=$(aws ec2 run-instances --image-id $IMAGE_ID  --instance-type $INSTANCE_TYPE --security-group-ids $SECURITY_GROUP_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
+    echo "created $i instance: $IP_ADDRESS"
+
+        aws route53 change-resource-record-sets --hosted-zone-id Z098285010FMU6PDV8O9P --change-batch '
+    {
+            "Changes": [{
+            "Action": "CREATE",
+                        "ResourceRecordSet": {
+                            "Name": "'$i.$DOMAIN_NAME'",
+                            "Type": "A",
+                            "TTL": 300,
+                            "ResourceRecords": [{ "Value": "'$IP_ADDRESS'"}]
+                        }}]
+    }
+    '
+done
+
