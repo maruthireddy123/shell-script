@@ -1,6 +1,5 @@
---- # Details of the customers
-Customer: 
-     Name: Maruthi
-     JOb: Devops associate software enginer
-     Skills: Git,Ansible,Docker,Jenkins,Kubernetes,Terraform
+- Customer: 
+    Name: Maruthi
+    JOb: Devops associate software enginer
+    Skills: Git,Ansible,Docker,Jenkins,Kubernetes,Terraform
      
